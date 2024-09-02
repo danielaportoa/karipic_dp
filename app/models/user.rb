@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :posts
+  has_many :comments
+  has_many :images, as: :imageable
+
+
+  enum :role, [:normal_user, :author, :admin]
+
 end
